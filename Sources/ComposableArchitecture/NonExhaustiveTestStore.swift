@@ -312,22 +312,22 @@
 
     // NB: Only needed until Xcode ships a macOS SDK that uses the 5.7 standard library.
     // See: https://forums.swift.org/t/xcode-14-rc-cannot-specialize-protocol-type/60171/15
-    #if swift(>=5.7) && !os(macOS) && !targetEnvironment(macCatalyst)
-      /// Suspends until all in-flight effects have finished, or until it times out.
-      ///
-      /// Can be used to assert that all effects have finished.
-      ///
-      /// - Parameter duration: The amount of time to wait before asserting.
-      @available(iOS 16, macOS 13, tvOS 16, watchOS 9, *)
-      @MainActor
-      func finish(
-        timeout duration: Duration? = nil,
-        file: StaticString = #file,
-        line: UInt = #line
-      ) async {
-        await self.finish(timeout: duration?.nanoseconds, file: file, line: line)
-      }
-    #endif
+//     #if swift(>=5.7) && !os(macOS) && !targetEnvironment(macCatalyst)
+//       /// Suspends until all in-flight effects have finished, or until it times out.
+//       ///
+//       /// Can be used to assert that all effects have finished.
+//       ///
+//       /// - Parameter duration: The amount of time to wait before asserting.
+//       @available(iOS 16, macOS 13, tvOS 16, watchOS 9, *)
+//       @MainActor
+//       func finish(
+//         timeout duration: Duration? = nil,
+//         file: StaticString = #file,
+//         line: UInt = #line
+//       ) async {
+//         await self.finish(timeout: duration?.nanoseconds, file: file, line: line)
+//       }
+//     #endif
 
     /// Suspends until all in-flight effects have finished, or until it times out.
     ///
